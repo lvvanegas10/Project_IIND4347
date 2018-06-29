@@ -2,7 +2,7 @@
 
 # NO OLVIDAR set working directory
 filename="colombia.csv"
-colb=read.csv(filename, stringsAsFactors = FALSE)
+colb=read.csv(filename, stringsAsFactors = FALSE, encoding="UTF-8")
 
 # que variables y tipo
 str(colb)
@@ -21,18 +21,19 @@ summary(colb)
 # el plot de cada uno seria el histograma:
 
 hist(colb$IDH)
-hist(colb$Poblaci贸n.Cabecera)
-hist(colb$Poblaci贸n.Resto)
+hist(colb$Poblaci髇.Cabecera)
+hist(colb$Poblaci髇.Resto)
 
 # dado el sesgo de las pobaciones, 
 # podriamos transformarla para que se acerque a la 
 # normalidad
 
-colb$cabeLog=log(colb$Poblaci贸n.Cabecera)
-colb$restoLog=log(colb$Poblaci贸n.Resto)
+colb$cabeLog=log(colb$Poblaci髇.Cabecera)
+colb$restoLog=log(colb$Poblaci髇.Resto)
 
 hist(colb$cabeLog)
 hist(colb$restoLog)
+
 
 
 # Exploracion Bivariada ---------------------------------------------------

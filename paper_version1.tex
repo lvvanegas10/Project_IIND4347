@@ -36,178 +36,149 @@ Comencemos viendo que hay en la sección \ref{univariada} en la página \pageref
 
 \clearpage
 
-\begin{Schunk}
-\begin{Soutput}
-'data.frame':	32 obs. of  6 variables:
- $ X.U.FEFF.IDH      : num  0.879 0.867 0.865 0.849 0.842 0.839 0.837 0.835 0.834 0.832 ...
- $ Departamento      : chr  "Santander" "Casanare" "Valle del Cauca" "Antioquia" ...
- $ Población.Cabecera: int  1587972 281548 4169553 5262172 742812 761658 10070801 2438533 56487 506254 ...
- $ Población.Resto   : int  502867 93701 586560 1428858 539251 206109 914484 107391 21926 68756 ...
- $ Población.Total   : int  2090839 375249 4756113 6691030 1282063 967767 10985285 2545924 78413 575010 ...
- $ DepartamentoNorm  : chr  "Santander" "Casanare" "Valle del Cauca" "Antioquia" ...
-\end{Soutput}
-\end{Schunk}
 
 \section{Exploración Univariada}\label{univariada}
 
 Esta es la sección de exploración univariada. En esta sección exploro cada índice.Esta es la sección de exploración univariada. En esta sección exploro cada índice. Esta es la sección de exploración univariada. En esta sección exploro cada índice. 
 
-Para conocer el comportamiento de las variables se ha preparado la Tabla \ref{Tfrecuencias}, donde se describe la distribución de las modalidades de cada variable. Los números representan la situación de algun país en ese indicador, donde el mayor valor numérico es la mejor situación.
+Además de la distribución de los variable, es importante saber el valor central. Como los valores son de naturaleza ordinal debemos pedir la {\bf mediana} y otras medidas de posición (como los \emph{cuartiles}, los que no pediremos pues son pocos valores). La mediana de cada variable la mostramos en la Tabla \ref{stats} en la página \pageref{stats}.
 
-% latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Fri Jun 29 15:09:13 2018
-\begingroup\normalsize
-\begin{longtable}{llrrr}
-\caption{Tablas de Frecuencia de la variables en estudio} \\ 
- \textbf{Variable} & \textbf{Levels} & $\mathbf{n}$ & $\mathbf{\%}$ & $\mathbf{\sum \%}$ \\ 
-  \hline \hline
-Departamento & Amazonas & 1 & 3.1 & 3.1 \\ 
-   & Antioquia & 1 & 3.1 & 6.2 \\ 
-   & Arauca & 1 & 3.1 & 9.4 \\ 
-   & Atlántico & 1 & 3.1 & 12.5 \\ 
-   & Bolívar & 1 & 3.1 & 15.6 \\ 
-   & Boyacá & 1 & 3.1 & 18.7 \\ 
-   & Caldas & 1 & 3.1 & 21.8 \\ 
-   & Caquetá & 1 & 3.1 & 25.0 \\ 
-   & Casanare & 1 & 3.1 & 28.1 \\ 
-   & Cauca & 1 & 3.1 & 31.2 \\ 
-   & Cesar & 1 & 3.1 & 34.3 \\ 
-   & Chocó & 1 & 3.1 & 37.4 \\ 
-   & Córdoba & 1 & 3.1 & 40.6 \\ 
-   & Cundinamarca & 1 & 3.1 & 43.7 \\ 
-   & Guainía & 1 & 3.1 & 46.8 \\ 
-   & Guaviare & 1 & 3.1 & 49.9 \\ 
-   & Huila & 1 & 3.1 & 53.0 \\ 
-   & La Guajira & 1 & 3.1 & 56.2 \\ 
-   & Magdalena & 1 & 3.1 & 59.3 \\ 
-   & Meta & 1 & 3.1 & 62.4 \\ 
-   & Nariño & 1 & 3.1 & 65.5 \\ 
-   & Norte de Santander & 1 & 3.1 & 68.6 \\ 
-   & Putumayo & 1 & 3.1 & 71.8 \\ 
-   & Quindío & 1 & 3.1 & 74.9 \\ 
-   & Risaralda & 1 & 3.1 & 78.0 \\ 
-   & San Andrés y Providencia & 1 & 3.1 & 81.1 \\ 
-   & Santander & 1 & 3.1 & 84.2 \\ 
-   & Sucre & 1 & 3.1 & 87.4 \\ 
-   & Tolima & 1 & 3.1 & 90.5 \\ 
-   & Valle del Cauca & 1 & 3.1 & 93.6 \\ 
-   & Vaupés & 1 & 3.1 & 96.7 \\ 
-   & Vichada & 1 & 3.1 & 99.8 \\ 
-   \hline
- & all & 32 & 99.8 &  \\ 
-   \hline
-\hline
-Población.Cabecera & 13090 & 1 & 3.1 & 3.1 \\ 
-   & 17679 & 1 & 3.1 & 6.2 \\ 
-   & 29009 & 1 & 3.1 & 9.4 \\ 
-   & 34200 & 1 & 3.1 & 12.5 \\ 
-   & 56487 & 1 & 3.1 & 15.6 \\ 
-   & 69723 & 1 & 3.1 & 18.7 \\ 
-   & 172650 & 1 & 3.1 & 21.8 \\ 
-   & 179323 & 1 & 3.1 & 25.0 \\ 
-   & 253058 & 1 & 3.1 & 28.1 \\ 
-   & 281548 & 1 & 3.1 & 31.2 \\ 
-   & 300012 & 1 & 3.1 & 34.3 \\ 
-   & 506254 & 1 & 3.1 & 37.4 \\ 
-   & 567393 & 1 & 3.1 & 40.6 \\ 
-   & 570399 & 1 & 3.1 & 43.7 \\ 
-   & 596651 & 1 & 3.1 & 46.8 \\ 
-   & 714664 & 1 & 3.1 & 49.9 \\ 
-   & 719730 & 1 & 3.1 & 53.0 \\ 
-   & 742812 & 1 & 3.1 & 56.2 \\ 
-   & 761658 & 1 & 3.1 & 59.3 \\ 
-   & 775636 & 1 & 3.1 & 62.4 \\ 
-   & 805262 & 1 & 3.1 & 65.5 \\ 
-   & 907590 & 1 & 3.1 & 68.6 \\ 
-   & 950107 & 1 & 3.1 & 71.8 \\ 
-   & 967669 & 1 & 3.1 & 74.9 \\ 
-   & 980694 & 1 & 3.1 & 78.0 \\ 
-   & 1099363 & 1 & 3.1 & 81.1 \\ 
-   & 1587972 & 1 & 3.1 & 84.2 \\ 
-   & 1693659 & 1 & 3.1 & 87.4 \\ 
-   & 2438533 & 1 & 3.1 & 90.5 \\ 
-   & 4169553 & 1 & 3.1 & 93.6 \\ 
-   & 5262172 & 1 & 3.1 & 96.7 \\ 
-   & 10070801 & 1 & 3.1 & 99.8 \\ 
-   \hline
- & all & 32 & 99.8 &  \\ 
-   \hline
-\hline
-Población.Resto & 21926 & 1 & 3.1 & 3.1 \\ 
-   & 27249 & 1 & 3.1 & 6.2 \\ 
-   & 30356 & 1 & 3.1 & 9.4 \\ 
-   & 43076 & 1 & 3.1 & 12.5 \\ 
-   & 46106 & 1 & 3.1 & 15.6 \\ 
-   & 49821 & 1 & 3.1 & 18.7 \\ 
-   & 68756 & 1 & 3.1 & 21.8 \\ 
-   & 93701 & 1 & 3.1 & 25.0 \\ 
-   & 98058 & 1 & 3.1 & 28.1 \\ 
-   & 107391 & 1 & 3.1 & 31.2 \\ 
-   & 179573 & 1 & 3.1 & 34.3 \\ 
-   & 196229 & 1 & 3.1 & 37.4 \\ 
-   & 206109 & 1 & 3.1 & 40.6 \\ 
-   & 241065 & 1 & 3.1 & 43.7 \\ 
-   & 260411 & 1 & 3.1 & 46.8 \\ 
-   & 262087 & 1 & 3.1 & 49.9 \\ 
-   & 274136 & 1 & 3.1 & 53.0 \\ 
-   & 280406 & 1 & 3.1 & 56.2 \\ 
-   & 291876 & 1 & 3.1 & 59.3 \\ 
-   & 331022 & 1 & 3.1 & 62.4 \\ 
-   & 439253 & 1 & 3.1 & 65.5 \\ 
-   & 469758 & 1 & 3.1 & 68.6 \\ 
-   & 477621 & 1 & 3.1 & 71.8 \\ 
-   & 482417 & 1 & 3.1 & 74.9 \\ 
-   & 502867 & 1 & 3.1 & 78.0 \\ 
-   & 539251 & 1 & 3.1 & 81.1 \\ 
-   & 586560 & 1 & 3.1 & 84.2 \\ 
-   & 838400 & 1 & 3.1 & 87.4 \\ 
-   & 848540 & 1 & 3.1 & 90.5 \\ 
-   & 901526 & 1 & 3.1 & 93.6 \\ 
-   & 914484 & 1 & 3.1 & 96.7 \\ 
-   & 1428858 & 1 & 3.1 & 99.8 \\ 
-   \hline
- & all & 32 & 99.8 &  \\ 
-   \hline
-\hline
-Población.Total & 43446 & 1 & 3.1 & 3.1 \\ 
-   & 44928 & 1 & 3.1 & 6.2 \\ 
-   & 77276 & 1 & 3.1 & 9.4 \\ 
-   & 78413 & 1 & 3.1 & 12.5 \\ 
-   & 78830 & 1 & 3.1 & 15.6 \\ 
-   & 115829 & 1 & 3.1 & 18.7 \\ 
-   & 270708 & 1 & 3.1 & 21.8 \\ 
-   & 358896 & 1 & 3.1 & 25.0 \\ 
-   & 375249 & 1 & 3.1 & 28.1 \\ 
-   & 496241 & 1 & 3.1 & 31.2 \\ 
-   & 515145 & 1 & 3.1 & 34.3 \\ 
-   & 575010 & 1 & 3.1 & 37.4 \\ 
-   & 877057 & 1 & 3.1 & 40.6 \\ 
-   & 967767 & 1 & 3.1 & 43.7 \\ 
-   & 993866 & 1 & 3.1 & 46.8 \\ 
-   & 1016701 & 1 & 3.1 & 49.9 \\ 
-   & 1040157 & 1 & 3.1 & 53.0 \\ 
-   & 1065673 & 1 & 3.1 & 56.2 \\ 
-   & 1197081 & 1 & 3.1 & 59.3 \\ 
-   & 1282063 & 1 & 3.1 & 62.4 \\ 
-   & 1298691 & 1 & 3.1 & 65.5 \\ 
-   & 1391239 & 1 & 3.1 & 68.6 \\ 
-   & 1415933 & 1 & 3.1 & 71.8 \\ 
-   & 1419947 & 1 & 3.1 & 74.9 \\ 
-   & 1788507 & 1 & 3.1 & 78.0 \\ 
-   & 1809116 & 1 & 3.1 & 81.1 \\ 
-   & 2090839 & 1 & 3.1 & 84.2 \\ 
-   & 2171280 & 1 & 3.1 & 87.4 \\ 
-   & 2545924 & 1 & 3.1 & 90.5 \\ 
-   & 4756113 & 1 & 3.1 & 93.6 \\ 
-   & 6691030 & 1 & 3.1 & 96.7 \\ 
-   & 10985285 & 1 & 3.1 & 99.8 \\ 
-   \hline
- & all & 32 & 99.8 &  \\ 
-   \hline
-\hline
-\hline
-\label{Tfrecuencias}
-\end{longtable}
-\endgroup
+
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: vi., jun. 29, 2018 - 16:59:44
+\begin{table}[!htbp] \centering 
+  \caption{Medidas estadísticas} 
+  \label{stats} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Median} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\ 
+\hline \\[-1.8ex] 
+IDH & 32 & 0.804 & 0.691 & 0.879 \\ 
+Población.Cabecera & 32 & 717,197 & 13,090 & 10,070,801 \\ 
+Población.Resto & 32 & 268,111.5 & 21,926 & 1,428,858 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+A continuación, se muestra el histograma en la Figura \ref{histplots} en la página \pageref{histplots}.de las variables IDH, Población cabecera y Población Restante:
+
+%%%%% figure
+\begin{figure}[h]
+\centering
+\begin{adjustbox}{width=7cm,height=7cm,clip,trim=1.5cm 0.5cm 0cm 1.5cm}
+\includegraphics{paper_version1-histograms}
+\end{adjustbox}
+\caption{Histogramas}
+\label{histplots}
+\end{figure}
+
+Dado el sesgo de las pobaciones, podriamos transformarla para que se acerque a la normalidad. En la Figura \ref{histplotsNorm} en la página \pageref{histplotsNorm}, se muestran los histogramas con las poblaciones normalizadas con una transformación de logarítmo. 
+
+\begin{figure}[h]
+\centering
+\begin{adjustbox}{width=7cm,height=7cm,clip,trim=1.5cm 0.5cm 0cm 1.5cm}
+\includegraphics{paper_version1-histogramsNorm}
+\end{adjustbox}
+\caption{Histogramas Población Normalizados }
+\label{histplotsNorm}
+\end{figure}
+
+\section{Exploración Bivariada}\label{bivariada}
+
+En este trabajo estamos interesados en el impacto de los otros indices en el nivel de Democracia. Veamos las relaciones bivariadas que tiene esta variable con todas las demás:
+
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: vi., jun. 29, 2018 - 16:59:48
+\begin{table}[!htbp] \centering 
+  \caption{Correlación de Democracia con las demás variables} 
+  \label{corrDem} 
+\begin{tabular}{@{\extracolsep{5pt}} cc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+cabeLog & restoLog \\ 
+\hline \\[-1.8ex] 
+$0.487$ & $0.177$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+Veamos la correlación entre las variables independientes:
+
+
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: vi., jun. 29, 2018 - 16:59:48
+\begin{table}[!htbp] \centering 
+  \caption{Correlación entre variables independientes} 
+  \label{corrTableX} 
+\begin{tabular}{@{\extracolsep{5pt}} ccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & cabeLog & restoLog \\ 
+\hline \\[-1.8ex] 
+cabeLog & 1 &  \\ 
+restoLog & 0.8 & 1 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+Lo visto en la Tabla \ref{corrTableX} se refuerza claramente en la Figura \ref{corrPlotX}.
+
+\begin{figure}[h]
+\centering
+\begin{adjustbox}{width=7cm,height=7cm,clip,trim=1.5cm 0.5cm 0cm 1.5cm}
+\includegraphics{paper_version1-corrPlotX}
+\end{adjustbox}
+\caption{Correlación entre predictores}
+\label{corrPlotX}
+\end{figure}
+
+\section{Modelos de Regresión}
+
+Finalmente, vemos los modelos propuestos. Primero sin poblacion resto, luego con esta. Los resultados se muestran en la Tabla \ref{regresiones} de la página \pageref{regresiones}.
+
+
+
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: vi., jun. 29, 2018 - 16:59:48
+\begin{table}[!htbp] \centering 
+  \caption{Modelos de Regresión} 
+  \label{regresiones} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{IDH} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ cabeLog & 0.013$^{***}$ & 0.031$^{***}$ \\ 
+  & (0.004) & (0.007) \\ 
+  & & \\ 
+ restoLog &  & $-$0.030$^{***}$ \\ 
+  &  & (0.010) \\ 
+  & & \\ 
+ Constant & 0.634$^{***}$ & 0.766$^{***}$ \\ 
+  & (0.055) & (0.065) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 32 & 32 \\ 
+R$^{2}$ & 0.238 & 0.425 \\ 
+Adjusted R$^{2}$ & 0.212 & 0.385 \\ 
+Residual Std. Error & 0.037 (df = 30) & 0.033 (df = 29) \\ 
+F Statistic & 9.347$^{***}$ (df = 1; 30) & 10.706$^{***}$ (df = 2; 29) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+Podemos sacar conclusiones al observar los resultados de las  regresiones en \ref{regresiones}
+
+\section{Exploración Espacial}
+
+Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}.
+
+
+\bibliographystyle{abbrv}
+%\renewcommand{\refname}{Bibliography}
+\bibliography{Colombia}
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.6.27)  29 JUN 2018 15:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.6.27)  29 JUN 2018 16:59
 entering extended mode
 **./paper_version1.tex
 (paper_version1.tex
@@ -462,7 +462,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibsep=\skip50
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count98
-) (C:/Users/lauva/DOCUME~1/R/R-34~1.1/share/texmf/tex/latex\Sweave.sty
+) (Sweave.sty
 Package: Sweave 
 
 ("C:\Users\lauva\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
@@ -769,50 +769,62 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 [1
 
 {C:/Users/lauva/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for TS1+aett on input line 41.
+<paper_version1-histograms.pdf, id=14, 433.62pt x 433.62pt>
+File: paper_version1-histograms.pdf Graphic file (type pdf)
+<use paper_version1-histograms.pdf>
+Package pdftex.def Info: paper_version1-histograms.pdf  used on input line 69.
+(pdftex.def)             Requested size: 276.00105pt x 276.0139pt.
+<paper_version1-histogramsNorm.pdf, id=15, 433.62pt x 433.62pt>
+File: paper_version1-histogramsNorm.pdf Graphic file (type pdf)
+<use paper_version1-histogramsNorm.pdf>
+Package pdftex.def Info: paper_version1-histogramsNorm.pdf  used on input line 
+80.
+(pdftex.def)             Requested size: 276.00105pt x 276.0139pt.
 
 
-(C:/Users/lauva/DOCUME~1/R/R-34~1.1/share/texmf/tex/latex\ts1aett.fd
-File: ts1aett.fd 
-)
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 41.
-
-
-("C:\Users\lauva\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmtt.fd"
-File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `TS1/aett/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmtt/m/n' tried instead on input line 41.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2
 
-] [3] [4] [5] (paper_version1.aux) ) 
+ <./paper_version1-histograms.pdf>]
+<paper_version1-corrPlotX.pdf, id=27, 433.62pt x 433.62pt>
+File: paper_version1-corrPlotX.pdf Graphic file (type pdf)
+<use paper_version1-corrPlotX.pdf>
+Package pdftex.def Info: paper_version1-corrPlotX.pdf  used on input line 128.
+(pdftex.def)             Requested size: 276.00105pt x 276.0139pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./paper_version1-histogramsNorm.pdf>] (paper_version1.bbl) [4 <./paper_vers
+ion1-corrPlotX.pdf>] [5] (paper_version1.aux) ) 
 Here is how much of TeX's memory you used:
- 4482 strings out of 493303
- 65164 string characters out of 3129784
- 133337 words of memory out of 3000000
- 7895 multiletter control sequences out of 15000+200000
- 31026 words of font info for 66 fonts, out of 3000000 for 9000
+ 4476 strings out of 493303
+ 65121 string characters out of 3129784
+ 121314 words of memory out of 3000000
+ 7892 multiletter control sequences out of 15000+200000
+ 32105 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,37p,648b,309s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\lauva\AppData\Local\MiKTeX\2.9\f
-onts\pk\ljfour\jknappen\ec\dpi600\tctt1000.pk><C:/Users/lauva/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/lauva/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Use
-rs/lauva/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9
-.pfb><C:/Users/lauva/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmex10.pfb><C:/Users/lauva/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr10.pfb><C:/Users/lauva/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lauva/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lauva/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lauv
-a/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:
-/Users/lauva/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mtt10.pfb><C:/Users/lauva/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmtt9.pfb>
-Output written on paper_version1.pdf (5 pages, 140475 bytes).
+ 41i,9n,37p,648b,358s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/lauva/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/lauva/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Us
+ers/lauva/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
+9.pfb><C:/Users/lauva/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmmi10.pfb><C:/Users/lauva/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr10.pfb><C:/Users/lauva/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lauva/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lauva/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lau
+va/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C
+:/Users/lauva/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><C:/Users/lauva/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmsy7.pfb><C:/Users/lauva/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmti10.pfb><C:/Users/lauva/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on paper_version1.pdf (5 pages, 173014 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
+ 92 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 5 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 20 words of extra memory for PDF output out of 10000 (max. 10000000)
 

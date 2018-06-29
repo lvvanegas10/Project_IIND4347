@@ -41,30 +41,140 @@ Comencemos viendo que hay en la sección \ref{univariada} en la página \pageref
 # NO OLVIDAR set working directory
 filename="colombia.csv"
 colb=read.csv(filename, stringsAsFactors = FALSE, encoding = "UTF-8")
-
-# que variables y tipo
-str(colb)
 @
 
 \section{Exploración Univariada}\label{univariada}
 
 Esta es la sección de exploración univariada. En esta sección exploro cada índice.Esta es la sección de exploración univariada. En esta sección exploro cada índice. Esta es la sección de exploración univariada. En esta sección exploro cada índice. 
 
-Para conocer el comportamiento de las variables se ha preparado la Tabla \ref{Tfrecuencias}, donde se describe la distribución de las modalidades de cada variable. Los números representan la situación de algun país en ese indicador, donde el mayor valor numérico es la mejor situación.
+Además de la distribución de los variable, es importante saber el valor central. Como los valores son de naturaleza ordinal debemos pedir la {\bf mediana} y otras medidas de posición (como los \emph{cuartiles}, los que no pediremos pues son pocos valores). La mediana de cada variable la mostramos en la Tabla \ref{stats} en la página \pageref{stats}.
 
-<<results=tex,echo=FALSE>>=
-library(reporttools)
-library(xtable)
 
-titulo <- "Tablas de Frecuencia de la variables en estudio"
-tableNominal(vars = colb[, c(2:5)], 
-             cap = titulo, vertical = FALSE, 
-             lab ="Tfrecuencias",
-             caption.placement = "top",
-             font.size = "normalsize",
-             add.to.row = list(pos = list(0),
-                               command = "\\hline"))
+<<summary, results=tex, echo=FALSE>>=
+library(stargazer)
+vars1 <- colb[,c(1:4)]
+
+stargazer(vars1,title = "Medidas estadísticas", label = "stats",summary.stat = c("n", "median", "min", "max"))
 @
 
+A continuación, se muestra el histograma en la Figura \ref{histplots} en la página \pageref{histplots}.de las variables IDH, Población cabecera y Población Restante:
+
+%%%%% figure
+\begin{figure}[h]
+\centering
+\begin{adjustbox}{width=7cm,height=7cm,clip,trim=1.5cm 0.5cm 0cm 1.5cm}
+<<histograms, echo=FALSE,fig=TRUE>>=
+par(mfrow=c(1,3))
+
+hist(colb$IDH,   
+     main="IDH", 
+     xlab="IDH", 
+     col="red")
+hist(colb$Población.Cabecera, 
+     main="Población Cabecera", 
+     xlab="Población",
+     col="red")
+hist(colb$Población.Resto, 
+     main="Población Restante", 
+     xlab="Población",
+     col="red")
+@
+\end{adjustbox}
+\caption{Histogramas}
+\label{histplots}
+\end{figure}
+
+Dado el sesgo de las pobaciones, podriamos transformarla para que se acerque a la normalidad. En la Figura \ref{histplotsNorm} en la página \pageref{histplotsNorm}, se muestran los histogramas con las poblaciones normalizadas con una transformación de logarítmo. 
+
+\begin{figure}[h]
+\centering
+\begin{adjustbox}{width=7cm,height=7cm,clip,trim=1.5cm 0.5cm 0cm 1.5cm}
+<<histogramsNorm, echo=FALSE,fig=TRUE>>=
+par(mfrow=c(1,2))
+
+colb$cabeLog=log(colb$Población.Cabecera)
+colb$restoLog=log(colb$Población.Resto)
+
+hist(colb$cabeLog,
+     main="Población Cabecera", 
+     xlab="Población",
+     col="red")
+hist(colb$restoLog, 
+     main="Población Restante", 
+     xlab="Población",
+     col="red")
+@
+\end{adjustbox}
+\caption{Histogramas Población Normalizados }
+\label{histplotsNorm}
+\end{figure}
+
+\section{Exploración Bivariada}\label{bivariada}
+
+En este trabajo estamos interesados en el impacto de los otros indices en el nivel de Democracia. Veamos las relaciones bivariadas que tiene esta variable con todas las demás:
+
+<<corrDem, results=tex, echo=FALSE>>=
+explanans=names(colb)[c(7:8)] # usando las logs
+corrDem=cor(colb$IDH,colb[,explanans],
+            use = "na.or.complete")
+stargazer(corrDem, title="Correlación de Democracia con las demás variables",label = "corrDem")
+@
+
+
+Veamos la correlación entre las variables independientes:
+
+
+<<corrTableX, results=tex, echo=FALSE>>=
+corrTableX=round(cor(colb[,explanans],
+                         use = "na.or.complete"),1)
+corrTableX_copy=corrTableX
+corrTableX[upper.tri(corrTableX)]<-""
+#ver:
+
+stargazer(corrTableX, title="Correlación entre variables independientes",label = 'corrTableX')
+@
+
+Lo visto en la Tabla \ref{corrTableX} se refuerza claramente en la Figura \ref{corrPlotX}.
+
+\begin{figure}[h]
+\centering
+\begin{adjustbox}{width=7cm,height=7cm,clip,trim=1.5cm 0.5cm 0cm 1.5cm}
+<<corrPlotX, echo=FALSE,fig=TRUE>>=
+library(corrplot)
+corrplot(corrTableX_copy, type = "lower", diag = F,
+         addCoef.col = "black")
+@
+\end{adjustbox}
+\caption{Correlación entre predictores}
+\label{corrPlotX}
+\end{figure}
+
+\section{Modelos de Regresión}
+
+Finalmente, vemos los modelos propuestos. Primero sin poblacion resto, luego con esta. Los resultados se muestran en la Tabla \ref{regresiones} de la página \pageref{regresiones}.
+
+<<regresiones, echo=FALSE>>=
+LinRegA = lm(IDH ~ ., data = colb[,c(1,7)])
+LinRegB = lm(IDH ~ ., data = colb[,c(1,7:8)])
+@
+
+
+<<regresionesPlot,results=tex, echo=false>>=
+stargazer(LinRegA,LinRegB,
+          title = "Modelos de Regresión", 
+          label = "regresiones")
+@
+
+Podemos sacar conclusiones al observar los resultados de las  regresiones en \ref{regresiones}
+
+\section{Exploración Espacial}
+
+Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}.
+
+
+
+\bibliographystyle{abbrv}
+%\renewcommand{\refname}{Bibliography}
+\bibliography{Colombia}
 
 \end{document}
