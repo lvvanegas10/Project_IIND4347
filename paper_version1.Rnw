@@ -138,11 +138,9 @@ Lo visto en la Tabla \ref{corrTableX} se refuerza claramente en la Figura \ref{c
 
 \begin{figure}[h]
 \centering
-\begin{adjustbox}{width=7cm,height=7cm,clip,trim=1.5cm 0.5cm 0cm 1.5cm}
+\begin{adjustbox}{}
 <<corrPlotX, echo=FALSE,fig=TRUE>>=
-library(corrplot)
-corrplot(corrTableX_copy, type = "lower", diag = F,
-         addCoef.col = "black")
+plot(colb[,explanans])
 @
 \end{adjustbox}
 \caption{Correlación entre predictores}
@@ -151,7 +149,11 @@ corrplot(corrTableX_copy, type = "lower", diag = F,
 
 \section{Modelos de Regresión}
 
-Finalmente, vemos los modelos propuestos. Primero sin poblacion resto, luego con esta. Los resultados se muestran en la Tabla \ref{regresiones} de la página \pageref{regresiones}.
+Finalmente, vemos los modelos propuestos. Primero sin poblacion resto, luego con esta. Los resultados se muestran en la Tabla \ref{regresiones} de la página \pageref{regresiones}. Finalmente, vemos los modelos propuestos. Primero sin poblacion resto, luego con esta. Los resultados se muestran en la Tabla \ref{regresiones} de la página \pageref{regresiones}.Finalmente, vemos los modelos propuestos. 
+
+Primero sin poblacion resto, luego con esta. Los resultados se muestran en la Tabla \ref{regresiones} de la página \pageref{regresiones}.Finalmente, vemos los modelos propuestos. Primero sin poblacion resto, luego con esta. Los resultados se muestran en la Tabla \ref{regresiones} de la página \pageref{regresiones}.
+
+Finalmente, vemos los modelos propuestos. Primero sin poblacion resto, luego con esta. Los resultados se muestran en la Tabla \ref{regresiones} de la página \pageref{regresiones}.Finalmente, vemos los modelos propuestos. Primero sin poblacion resto, luego con esta. Los resultados se muestran en la Tabla \ref{regresiones} de la página \pageref{regresiones}.
 
 <<regresiones, echo=FALSE>>=
 LinRegA = lm(IDH ~ ., data = colb[,c(1,7)])
@@ -159,7 +161,7 @@ LinRegB = lm(IDH ~ ., data = colb[,c(1,7:8)])
 @
 
 
-<<regresionesPlot,results=tex, echo=false>>=
+<<regresionesPlot,results=tex, echo=FALSE>>=
 stargazer(LinRegA,LinRegB,
           title = "Modelos de Regresión", 
           label = "regresiones")
@@ -169,7 +171,11 @@ Podemos sacar conclusiones al observar los resultados de las  regresiones en \re
 
 \section{Exploración Espacial}
 
-Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}.
+Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}. Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}. Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}.Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}. Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}.
+
+Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}. Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}. Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}.Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}. Calculemos conglomerados de regiones, usando toda la información de las tres variables.Usaremos la tecnica de k-means propuesta por \cite{macqueen_methods_nodate}.
+
+A continuación se muestra el mapa de Colombia con ubicaciones.
 
 <<getMap, echo=FALSE,results=hide>>=
 library(rgdal)
@@ -215,7 +221,7 @@ mapCol_idh=merge(mapCol_idh,clusters, by='NAME_1',all.x=F)
 
 \begin{figure}[h]
 \centering
-\begin{adjustbox}{width=11cm,height=8cm,clip,trim=1cm 2.5cm 0cm 2.5cm}
+\begin{adjustbox}{width=12cm,height=12cm,clip,trim=0cm 0cm 0cm 0cm}
 <<plotMap1, echo=FALSE, fig=TRUE>>=
 library(RColorBrewer)
 library(classInt)
