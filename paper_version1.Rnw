@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+\usepackage{authblk}
+\usepackage{adjustbox}
+\usepackage{natbib}
+
+\title{LOS INDICES DE COLOMBIA}
+% autores
+\renewcommand\Authand{, y }
+\author[1]{\normalsize Laura Valeria Vanegas García}
+
+\affil[1]{\small  Facultad de Ingeniería,Universidad de los Andes\\
+\texttt{{lv.vanegas10}@uniandes.edu.co}}
+
+\date{29 de Junio de 2018}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\maketitle
+
+\begin{abstract}
+Este es mi proyecto final para el curso de verano IIN4347 de la Universidad ded los Andes para 2018-19. Este es mi primer trabajo en exploracion y modelamiento de indices usando LATEX. Este trabajo lo he hecho bajo la filosofía de trabajo replicable. Este es mi proyecto final para el curso de verano IIN4347 de la Universidad ded los Andes para 2018-19. Este es mi primer trabajo en exploracion y modelamiento de indices usando LATEX. Este trabajo lo he hecho bajo la filosofía de trabajo replicable.
+\end{abstract}
+
+\section*{Introducción}
+
+En este documento presento mi investigacion sobre diversos indices sociales en Colombia. Los indices fueron extraidos de wikipedia y se realizó preprocesamiento en Python con ayuda de la librería Pandas. En este documento presento mi investigacion sobre diversos indices sociales en Colombia. Los indices fueron extraidos de wikipedia y se realizó preprocesamiento en Python con ayuda de la librería Pandas. 
+
+En este documento presento mi investigacion sobre diversos indices sociales en Colombia. Los indices fueron extraidos de wikipedia y se realizó preprocesamiento en Python con ayuda de la librería Pandas.En este documento presento mi investigacion sobre diversos indices sociales en Colombia. Los indices fueron extraidos de wikipedia y se realizó preprocesamiento en Python con ayuda de la librería Pandas. En este documento presento mi investigacion sobre diversos indices sociales en Colombia. Los indices fueron extraidos de wikipedia y se realizó preprocesamiento en Python con ayuda de la librería Pandas.
+
+Comencemos viendo que hay en la sección \ref{univariada} en la página \pageref{univariada}.
+
+\clearpage
+
+<<cargaDatos, echo=FALSE>>=
+# Cargar archivo ----
+
+# NO OLVIDAR set working directory
+filename="colombia.csv"
+colb=read.csv(filename, stringsAsFactors = FALSE, encoding = "UTF-8")
+
+# que variables y tipo
+str(colb)
+@
+
+\section{Exploración Univariada}\label{univariada}
+
+Esta es la sección de exploración univariada. En esta sección exploro cada índice.Esta es la sección de exploración univariada. En esta sección exploro cada índice. Esta es la sección de exploración univariada. En esta sección exploro cada índice. 
+
+Para conocer el comportamiento de las variables se ha preparado la Tabla \ref{Tfrecuencias}, donde se describe la distribución de las modalidades de cada variable. Los números representan la situación de algun país en ese indicador, donde el mayor valor numérico es la mejor situación.
+
+<<results=tex,echo=FALSE>>=
+library(reporttools)
+library(xtable)
+
+titulo <- "Tablas de Frecuencia de la variables en estudio"
+tableNominal(vars = colb[, c(2:5)], 
+             cap = titulo, vertical = FALSE, 
+             lab ="Tfrecuencias",
+             caption.placement = "top",
+             font.size = "normalsize",
+             add.to.row = list(pos = list(0),
+                               command = "\\hline"))
+@
+
+
+\end{document}
