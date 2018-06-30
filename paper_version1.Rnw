@@ -140,7 +140,7 @@ Lo visto en la Tabla \ref{corrTableX} se refuerza claramente en la Figura \ref{c
 \centering
 \begin{adjustbox}{}
 <<corrPlotX, echo=FALSE,fig=TRUE>>=
-plot(colb[,explanans])
+plot(colb[,explanans], col="blue")
 @
 \end{adjustbox}
 \caption{Correlación entre predictores}
